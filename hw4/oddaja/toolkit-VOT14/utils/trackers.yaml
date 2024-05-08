@@ -1,0 +1,15 @@
+---
+particle_filter_tracker:  # use tracker identifier as you want to call your tracker from terminal
+  tracker_path: examples/particle_filter_tracker.py  # path to the Python script with your tracker
+  class_name: ParticleFilterTracker  # class name of your tracker
+
+# another trackers can be added here, similarly as in the upper example
+# here is an example for the NCC tracker:
+ncc_tracker:
+ tracker_path: examples/python_ncc.py
+ class_name: NCCTracker  
+
+test:
+ tracker_path: examples/test.py
+ class_name: test  
+...
