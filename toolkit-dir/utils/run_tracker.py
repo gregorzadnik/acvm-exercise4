@@ -6,12 +6,14 @@ from sequence_utils import VOTSequence
 #from ncc_tracker_example import NCCTracker, NCCParams
 #from mean_shift_tracker import MSTracker, MSParams
 from python_moss import MOSSTracker
+from python_kalman import KalmanTracker
 
 
 # set the path to directory where you have the sequences
 #dataset_path = 'E:\\Gregor\\Faks\\Magisterij\\1.letnik\\NMRV\\Exercise2\\Sequences'
 dataset_path = 'E:\\Gregor\\Faks\\Magisterij\\1.letnik\\NMRV\\Exercise3\\workspace-dir\\sequences'
-sequence = 'bolt'  # choose the sequence you want to test
+dataset_path = '..\\..\\workspace-dir\\sequences'
+sequence = 'ball'  # choose the sequence you want to test
 
 # visualization and setup parameters
 win_name = 'Tracking window'
@@ -29,7 +31,7 @@ n_failures = 0
 #tracker = NCCTracker(parameters)
 #parameters = MSParams()
 #tracker = MSTracker(parameters)
-tracker = MOSSTracker()
+tracker = KalmanTracker()
 time_all = 0
 
 # initialize visualization window
