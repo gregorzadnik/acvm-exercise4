@@ -7,6 +7,7 @@ from sequence_utils import VOTSequence
 #from mean_shift_tracker import MSTracker, MSParams
 from python_moss import MOSSTracker
 from python_kalman import KalmanTracker
+from particle_filter_tracker import ParticleFilterTracker
 
 
 # set the path to directory where you have the sequences
@@ -32,6 +33,7 @@ n_failures = 0
 #parameters = MSParams()
 #tracker = MSTracker(parameters)
 tracker = KalmanTracker()
+tracker = ParticleFilterTracker()
 time_all = 0
 
 # initialize visualization window
@@ -47,7 +49,7 @@ while frame_idx < sequence.length():
         t_ = time.time()
         tracker.initialize(img, sequence.get_annotation(frame_idx, type='rectangle'))
         init_time = time.time() - t_
-        print(f"Init time: {init_time}")
+        #print(f"Init time: {init_time}")
         time_all += time.time() - t_
         predicted_bbox = sequence.get_annotation(frame_idx, type='rectangle')
     else:
@@ -55,7 +57,7 @@ while frame_idx < sequence.length():
         t_ = time.time()
         predicted_bbox = tracker.track(img)
         current = time.time() - t_
-        print(f"Current: {current}")
+        #print(f"Current: {current}")
         time_all += time.time() - t_
 
     # calculate overlap (needed to determine failure of a tracker)
