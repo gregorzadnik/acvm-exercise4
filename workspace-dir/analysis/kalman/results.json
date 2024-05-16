@@ -1,0 +1,44 @@
+{
+  "tracker_name": "kalman",
+  "results": [
+    {
+      "sequence_name": "ball",
+      "sequence_length": 602,
+      "overlap": 0.38187053979231467,
+      "failures": 8,
+      "speed": 6.675978657449046
+    },
+    {
+      "sequence_name": "basketball",
+      "sequence_length": 725,
+      "overlap": 0.4226686485020875,
+      "failures": 9,
+      "speed": 5.775943652904925
+    },
+    {
+      "sequence_name": "bicycle",
+      "sequence_length": 271,
+      "overlap": 0.42475965413796773,
+      "failures": 9,
+      "speed": 5.14216578570061
+    },
+    {
+      "sequence_name": "bolt",
+      "sequence_length": 350,
+      "overlap": 0.47541370190498106,
+      "failures": 7,
+      "speed": 4.962101267933017
+    },
+    {
+      "sequence_name": "car",
+      "sequence_length": 252,
+      "overlap": 0.24829082394476096,
+      "failures": 2,
+      "speed": 4.704934814458642
+    }
+  ],
+  "average_overlap": 0.39060067365642237,
+  "total_failures": 35,
+  "average_speed": 5.452224835689249,
+  "total_frames": 2200
+}

@@ -81,7 +81,8 @@ class KalmanTracker(Tracker):
     def set_q(self, image):
         area1 = self.size[0]*self.size[1]
         area2 = image.shape[0]*image.shape[1]
-        return 100*area1/area2
+        #return 100*area1/area2
+        return self.parameters.q*area1/area2
 
     def __init__(self):
         self.parameters = KalmanParams()
@@ -159,10 +160,11 @@ class KalmanTracker(Tracker):
         return [self.position[0] - self.size[0]/2, self.position[1] - self.size[1]/2, self.size[0], self.size[1]]
 
 class KalmanParams():
-    def __init__(self, sigma=0.5, nbins=16, model="NCV", n=100, hell_sig=1, alpha=0.05):
+    def __init__(self, sigma=0.5, nbins=16, q=1, model="NCV", n=300, hell_sig=1, alpha=0.05):
+        self.sigma = sigma
+        self.nbins = nbins
+        self.q = q
         self.model = model
         self.n = n
         self.hell_sig = hell_sig
-        self.sigma = sigma
-        self.nbins = nbins
         self.alpha = alpha
